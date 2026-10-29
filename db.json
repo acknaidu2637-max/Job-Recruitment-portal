@@ -1,0 +1,82 @@
+{
+  "hirers": [
+    {
+      "fullName": "Smith",
+      "email": "xy@company.com",
+      "companyName": "XY",
+      "companyWebsite": "https://www.Xy.com",
+      "id": "vMPz0Dk8-qE"
+    },
+    {
+      "fullName": "Roy",
+      "email": "roy@company.com",
+      "companyName": "Roy Groups",
+      "companyWebsite": "https://roygroups.com",
+      "id": "jzhW1bxUcYY"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "1",
+      "title": "Frontend Developer",
+      "location": "Remote",
+      "experience": "2-4 years",
+      "description": "React JS developer needed."
+    },
+    {
+      "title": "AIML",
+      "location": "OnSite",
+      "experience": "1-2 years",
+      "id": "UEWDdu4OEjc"
+    },
+    {
+      "title": "FullStack developer",
+      "location": "Remote",
+      "experience": "Any one",
+      "companyName": "Roy Groups",
+      "description": "candidate with required skills like reack.js,mangoDB...\n",
+      "id": "y92yK8bp2Ko"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "1",
+      "name": "Jane Doe",
+      "email": "jane@example.com",
+      "skills": "React, JavaScript",
+      "hasExperience": "yes",
+      "company": "Tech Corp",
+      "years": "2",
+      "field": "Frontend",
+      "education": ""
+    },
+    {
+      "name": "Siri",
+      "email": "siri@gmail.com",
+      "skills": "Python",
+      "hasExperience": "no",
+      "company": "",
+      "years": "",
+      "field": "",
+      "education": "SIte",
+      "id": "uq3CaPRl-NI"
+    }
+  ],
+  "applications": [
+    {
+      "id": "1",
+      "jobId": "1",
+      "candidateId": "1",
+      "status": "Pending",
+      "appliedDate": "2026-10-25"
+    },
+    {
+      "jobId": "UEWDdu4OEjc",
+      "candidateId": "uq3CaPRl-NI",
+      "status": "Pending",
+      "appliedDate": "2026-10-28",
+      "id": "EOXo1tR-KKE"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

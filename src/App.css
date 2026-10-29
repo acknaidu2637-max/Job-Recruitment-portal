@@ -1,0 +1,368 @@
+/* Import a clean modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+/* --- GLOBAL VARIABLES --- */
+:root {
+  --primary-color: #0056b3;
+  --primary-hover: #004494;
+  --success-color: #28a745;
+  --success-hover: #218838;
+  --danger-color: #dc3545;
+  --danger-hover: #c82333;
+  --info-color: #17a2b8;
+  --warning-color: #ffc107;
+  --secondary-color: #f4f7f6;
+  --text-color: #333;
+  --text-muted: #666;
+  --border-color: #ddd;
+  --bg-color: #eaeff2;
+}
+
+/* --- BASE STYLES --- */
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* --- NAVIGATION BAR --- */
+nav {
+  background-color: white;
+  padding: 15px 30px !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  margin-bottom: 30px !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+nav a:first-child {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--primary-color);
+  margin-right: 20px;
+}
+
+/* --- LAYOUT CONTAINERS --- */
+/* Default: Centered in the middle of the page for forms and lists */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  min-height: 80vh;
+}
+
+/* Dashboard Override: Slightly wider */
+.container:has(.dashboard-grid) {
+  max-width: 1000px;
+}
+
+/* Jobs Page Override: Full Page (95%) */
+.container:has(.layout-split) {
+  max-width: 95%;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* --- JOBS PAGE LAYOUT (1/4th Sidebar, 3/4th Main) --- */
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.search-input {
+  width: 50% !important;
+  border-radius: 30px !important;
+  padding: 12px 20px !important;
+  margin-bottom: 0 !important;
+}
+
+.layout-split {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.sidebar {
+  width: 25%; /* Exactly 1/4th of the page */
+  flex-shrink: 0;
+}
+
+.main-content {
+  width: 75%; /* Exactly 3/4ths of the page */
+}
+
+/* --- CARDS & PANELS --- */
+.card {
+  background: var(--secondary-color);
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.dashboard-grid .card {
+  text-align: center;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--text-muted);
+}
+
+/* Restrict the giant text strictly to the Dashboard metric numbers */
+.dashboard-grid .card p {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+  color: var(--primary-color);
+}
+
+/* --- FORMS & INPUTS --- */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="url"],
+select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 15px;
+  background-color: #fff;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* --- RADIO BUTTONS (Work Experience Toggle) --- */
+.toggle-box {
+  margin-bottom: 20px;
+}
+
+/* Decrease font size by 2px (Base is 16px, making this 14px) */
+.toggle-box p {
+  font-size: 14px; 
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Place radio buttons side-by-side */
+.toggle-box label {
+  display: inline-flex; 
+  align-items: center;
+  margin-right: 25px; 
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.toggle-box input[type="radio"] {
+  width: auto;
+  margin: 0 8px 0 0;
+  cursor: pointer;
+}
+
+.conditional-box {
+  background: #f4f7f6;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.conditional-box h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+/* --- BUTTONS --- */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+button:hover { background-color: var(--primary-hover); }
+
+/* Explicit Green Button for Accept */
+button.success, 
+.app-actions button.success { 
+  background-color: var(--success-color) !important; 
+  color: white !important;
+}
+button.success:hover { background-color: var(--success-hover) !important; }
+
+button.danger { background-color: var(--danger-color); }
+button.danger:hover { background-color: var(--danger-hover); }
+
+button.info { background-color: var(--info-color); }
+button.info:hover { background-color: #117a8b; }
+
+button.outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+button.outline:hover {
+  background-color: rgba(0, 86, 179, 0.05);
+}
+
+/* --- LISTS & ITEMS --- */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: var(--secondary-color);
+  margin-bottom: 15px;
+  padding: 20px 25px;
+  border-radius: 8px;
+  border-left: 5px solid var(--primary-color);
+}
+
+.job-item, .app-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.job-details h3, .app-details h3 {
+  margin: 0 0 8px 0;
+  color: var(--primary-color);
+}
+.job-details p, .app-details p {
+  margin: 0 0 10px 0;
+  color: var(--text-muted);
+}
+
+.job-actions, .app-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* --- BADGES --- */
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.badge.id { background: #e2e8f0; color: #475569; }
+.badge.pending { background: var(--warning-color); color: #000; }
+.badge.accepted { background: var(--success-color); color: #fff; }
+.badge.rejected { background: var(--danger-color); color: #fff; }
+
+/* --- PROFILE DETAILS --- */
+.profile-card {
+  padding: 30px;
+}
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.profile-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.profile-contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+.profile-contact span {
+  font-size: 20px;
+}
+.section-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #888;
+  margin: 0 0 5px 0;
+}
+/* The actual experience or education details */
+.section-data {
+  margin: 0;
+  font-size: 15px; /* Reduced from 18px to a much cleaner, smaller size */
+  color: #444; /* Softened the color slightly so it isn't too heavy */
+  line-height: 1.5;
+}
+.profile-footer {
+  margin-top: 30px;
+}
+
+/* --- SELECTION PAGE --- */
+.selection-page {
+  text-align: center;
+  padding: 20px;
+}
+.selection-page .dashboard-grid {
+  margin-top: 30px;
+  text-align: left;
+}
+.card-description {
+  font-size: 14px !important;
+  font-weight: normal !important;
+  color: #555 !important;
+  line-height: 1.6;
+  margin-bottom: 25px !important;
+}
+
+/* --- UTILITIES --- */
+hr {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 20px 0;
+}
