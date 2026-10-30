@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://job-recruitment-portal-bquz.onrender.com";
 
 // --- JOBS API ---
 export const getJobs = async () => {
